@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-
+import './App.css'
 function App() {
   const buyFunction = async () => {
     try {
@@ -14,7 +14,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className='cart'>
       <h1>Buy a T-Shirt</h1>
       <button onClick={buyFunction}>Buy Now</button>
     </div>
