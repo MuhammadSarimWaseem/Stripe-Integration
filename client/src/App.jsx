@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import axios from 'axios';
 import './App.css'
+import Data from "./Data/Data.jsx"
+
 function App() {
   const buyFunction = async () => {
     try {
@@ -14,11 +16,20 @@ function App() {
   };
 
   return (
-    <div className='cart'>
-      <h1>Buy a T-Shirt</h1>
-      <img src="https://www.shutterstock.com/image-photo/blank-short-sleeve-t-shirt-260nw-2494678487.jpg"/><br />
-      <button onClick={buyFunction}>Buy Now</button>
-    </div>
+    <Fragment>
+      <div className='cart'>
+        {Data.map((item) => (
+          <div key={item.id} className='item'>
+            <img src={item.image} alt={item.name} className='item-image' />
+            <h1>{item.name}</h1><br />
+            <button onClick={buyFunction}>Add to Cart</button>
+          </div>
+        ))}
+      </div>
+      <div className='buy'>
+        <button onClick={buyFunction}>Buy Now</button>
+      </div>
+    </Fragment>
   );
 }
 

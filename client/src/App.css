@@ -12,8 +12,24 @@ button:hover {
 }
 
 .cart{
-  display: block;
-  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   text-align: center;
   align-items: center;
+  
+}
+.item{
+  padding: 40px;
+  margin-top: 2em;
+
+}
+img{
+  max-height: 20rem;
+}
+
+.buy{
+  text-align: center;
+  align-items: center;
+  margin-top: 1em;
 }
