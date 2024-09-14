@@ -18,6 +18,7 @@ app.post('/payment', async (req, res) => {
     try {
         const product = await stripe.products.create({
             name: "T-Shirt",
+            images: ["https://www.shutterstock.com/image-photo/blank-short-sleeve-t-shirt-260nw-2494678487.jpg"], // Set image while creating the product
         });
 
         const price = await stripe.prices.create({
