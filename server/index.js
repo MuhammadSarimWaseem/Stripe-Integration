@@ -18,13 +18,13 @@ app.post('/payment', async (req, res) => {
     try {
         const product = await stripe.products.create({
             name: "T-Shirt",
-            images: ["https://www.shutterstock.com/image-photo/blank-short-sleeve-t-shirt-260nw-2494678487.jpg"], // Set image while creating the product
+            images: ["https://www.shutterstock.com/image-photo/blank-short-sleeve-t-shirt-260nw-2494678487.jpg"],
         });
 
         const price = await stripe.prices.create({
             product: product.id,
-            unit_amount: 100 * 100, // 100 INR
-            currency: 'inr',
+            unit_amount: 20 * 100,
+            currency: 'usd',
         });
 
         const session = await stripe.checkout.sessions.create({
