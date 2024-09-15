@@ -1,3 +1,4 @@
+/* Basic styling for buttons */
 button {
   font-size: 16px;
   background-color: #6772e5 !important;
@@ -5,31 +6,85 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+/* Hover effect for buttons */
 button:hover {
   background-color: #5469d4 !important;
+  transform: scale(1.05);  /* Slightly enlarges the button on hover */
 }
 
-.cart{
+/* Container for cart items */
+.cart {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   text-align: center;
   align-items: center;
-  
+  padding: 2em;
+  gap: 1.5rem;  /* Adds space between items */
 }
-.item{
-  padding: 40px;
+
+/* Individual cart item styling */
+.item {
+  padding: 20px;
   margin-top: 2em;
-
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  border-radius: 10px;
+  transition: transform 0.3s ease; /* Adds an animation for the item */
 }
-img{
-  max-height: 20rem;
+
+/* Animation on hover for item */
+.item:hover {
+  transform: translateY(-10px); /* Makes the item rise slightly on hover */
 }
 
-.buy{
+/* Image styling */
+img {
+  max-height: 15rem;
+  min-width: 19rem;
+  mix-blend-mode: multiply;
+  transition: transform 0.3s ease;
+}
+
+/* Image hover effect */
+img:hover {
+  transform: scale(1.1); /* Slightly enlarges the image on hover */
+}
+
+/* Buy section styling */
+.buy {
   text-align: center;
   align-items: center;
   margin-top: 1em;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cart {
+    flex-direction: column; /* Stacks items vertically on smaller screens */
+    padding: 1em;
+  }
+
+  .item {
+    margin-top: 1.5em;
+    padding: 1em;
+  }
+
+  button {
+    font-size: 14px; /* Reduces button size for smaller screens */
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  img {
+    max-height: 15rem; /* Adjusts image size for smaller screens */
+  }
+
+  .item {
+    padding: 0.8em;
+  }
 }

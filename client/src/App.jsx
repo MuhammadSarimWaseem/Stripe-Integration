@@ -1,4 +1,4 @@
-import React, { Fragment , useState} from 'react';
+import React, { Fragment, useState } from 'react';
 import axios from 'axios';
 import './App.css'
 import Data from "./Data/Data.jsx"
@@ -7,14 +7,14 @@ function App() {
   const [cartItem, setCartItem] = useState([]);
 
   const addToCart = (item) => {
-    console.log("add to cart",item);
-    
+    console.log("add to cart", item);
+
     setCartItem((previousList) => [...previousList, item])
   }
 
   const buyFunction = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/payment', {cartItem});
+      const response = await axios.post('http://localhost:3000/payment', { cartItem });
       if (response.status === 200) {
         window.location.href = response.data.url;
       }
