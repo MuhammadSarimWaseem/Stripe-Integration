@@ -2,14 +2,34 @@ import React, { Fragment, useState } from 'react';
 import axios from 'axios';
 import './App.css'
 import Data from "./Data/Data.jsx"
+import { ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [cartItem, setCartItem] = useState([]);
+  const [items, setItems] = useState(0);
 
   const addToCart = (item) => {
     console.log("add to cart", item);
 
     setCartItem((previousList) => [...previousList, item])
+    setItems(items + 1);
+    toast("Add to Cart", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      progress: undefined,
+      theme: "dark",
+      style: {
+        width: "70%",
+        maxWidth: "300px",
+        margin: "0 auto",
+        fontSize: "14px"
+      },
+    });
   }
 
   const buyFunction = async () => {
@@ -38,6 +58,7 @@ function App() {
       <div className='buy'>
         <button onClick={buyFunction}>Buy Now</button>
       </div>
+      <ToastContainer></ToastContainer>
     </Fragment>
   );
 }
