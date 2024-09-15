@@ -13,7 +13,7 @@ const Data = [
     },
     {
         "id": 3,
-        "name": "Red Hoodie",
+        "name": "Red Smart Hoodie",
         "image": "https://media.istockphoto.com/id/154960461/photo/red-sweat-shirt-on-white-background.jpg?s=612x612&w=0&k=20&c=qpFaTOu5Bse6HFEFzl0gYpNfTKU-akpmNlDMsIxu1sU=",
         "price": 35.00
     },
