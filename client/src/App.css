@@ -13,7 +13,8 @@ button {
 /* Hover effect for buttons */
 button:hover {
   background-color: #5469d4 !important;
-  transform: scale(1.05);  /* Slightly enlarges the button on hover */
+  transform: scale(1.05);
+  /* Slightly enlarges the button on hover */
 }
 
 /* Container for cart items */
@@ -24,21 +25,25 @@ button:hover {
   text-align: center;
   align-items: center;
   padding: 2em;
-  gap: 1.5rem;  /* Adds space between items */
+  gap: 1.5rem;
+  /* Adds space between items */
 }
 
 /* Individual cart item styling */
 .item {
   padding: 20px;
   margin-top: 2em;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  /* Adds a subtle shadow */
   border-radius: 10px;
-  transition: transform 0.3s ease; /* Adds an animation for the item */
+  transition: transform 0.3s ease;
+  /* Adds an animation for the item */
 }
 
 /* Animation on hover for item */
 .item:hover {
-  transform: translateY(-10px); /* Makes the item rise slightly on hover */
+  transform: translateY(-10px);
+  /* Makes the item rise slightly on hover */
 }
 
 /* Image styling */
@@ -51,7 +56,8 @@ img {
 
 /* Image hover effect */
 img:hover {
-  transform: scale(1.1); /* Slightly enlarges the image on hover */
+  transform: scale(1.1);
+  /* Slightly enlarges the image on hover */
 }
 
 /* Buy section styling */
@@ -64,7 +70,8 @@ img:hover {
 /* Responsive design */
 @media (max-width: 768px) {
   .cart {
-    flex-direction: column; /* Stacks items vertically on smaller screens */
+    flex-direction: column;
+    /* Stacks items vertically on smaller screens */
     padding: 1em;
   }
 
@@ -74,14 +81,16 @@ img:hover {
   }
 
   button {
-    font-size: 14px; /* Reduces button size for smaller screens */
+    font-size: 14px;
+    /* Reduces button size for smaller screens */
     padding: 8px 16px;
   }
 }
 
 @media (max-width: 480px) {
   img {
-    max-height: 15rem; /* Adjusts image size for smaller screens */
+    max-height: 15rem;
+    /* Adjusts image size for smaller screens */
   }
 
   .item {
