@@ -5,7 +5,7 @@ require('dotenv').config();
 const stripe = require('stripe')(process.env.STRIPE);
 const app = express();
 
-app.use(cors());
+app.use(cors({ origin: "https://stripe-integration-zeta.vercel.app/" }));
 app.use(express.json());
 
 app.get('/', (req, res) => {
