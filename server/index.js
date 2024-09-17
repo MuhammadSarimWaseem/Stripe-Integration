@@ -8,7 +8,7 @@ const app = express();
 app.use(cors({ origin: "https://stripe-integration-zeta.vercel.app/" }));
 app.use(express.json());
 
-app.post('/payment', async (req, res) => {
+app.post('https://stripe-integration-zeta.vercel.app/payment', async (req, res) => {
   const { cartItem } = req.body;
 
   try {
