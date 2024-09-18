@@ -5,10 +5,10 @@ require('dotenv').config();
 const stripe = require('stripe')(process.env.STRIPE);
 const app = express();
 
-app.use(cors({ origin: "https://stripe-integration-zeta.vercel.app/" }));
+app.use(cors());
 app.use(express.json());
 
-app.post('https://stripe-integration-zeta.vercel.app/payment', async (req, res) => {
+app.post('http://localhost:3000/payment', async (req, res) => {
   const { cartItem } = req.body;
 
   try {
@@ -43,8 +43,8 @@ app.post('https://stripe-integration-zeta.vercel.app/payment', async (req, res) 
     const session = await stripe.checkout.sessions.create({
       line_items: lineItems,
       mode: 'payment',
-      success_url: 'https://stripe-integration-zeta.vercel.app/success',
-      cancel_url: 'https://stripe-integration-zeta.vercel.app/cancel',
+      success_url: 'http://localhost:3000/success',
+      cancel_url: 'http://localhost:3000/cancel',
       customer_email: 'demo@gmail.com',
     });
 
