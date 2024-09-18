@@ -7,14 +7,11 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [cartItem, setCartItem] = useState([]);
-  const [items, setItems] = useState(0);
 
   const addToCart = (item) => {
     console.log("add to cart", item);
-
     setCartItem((previousList) => [...previousList, item]);
-    setItems(items + 1);
-    toast("Added to Cart", {
+    toast.success("Added to Cart", {
       position: "top-right",
       autoClose: 1000,
       hideProgressBar: false,
@@ -38,6 +35,14 @@ function App() {
       }
     } catch (error) {
       console.error('Error processing payment:', error);
+      toast.error('Error processing payment. Please try again.', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        theme: "dark",
+      });
     }
   };
 
@@ -45,7 +50,6 @@ function App() {
     const newCartItem = [...cartItem];
     newCartItem.splice(index, 1);
     setCartItem(newCartItem);
-    setItems(items - 1);
   };
 
   return (
@@ -64,7 +68,9 @@ function App() {
         <h2>CART ITEMS</h2>
         <ul>
           {cartItem.map((cart, index) => (
-            <li key={cart.id}>{cart.name} - {cart.price}.00$ <button onClick={() => deleteItem(index)}>X</button></li>
+            <li key={index}>
+              {cart.name} - {cart.price}.00$ <button onClick={() => deleteItem(index)}>X</button>
+            </li>
           ))}
         </ul>
         {cartItem.length > 0 && (

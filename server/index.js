@@ -1,14 +1,13 @@
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
-
 const stripe = require('stripe')(process.env.STRIPE);
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-app.post('http://localhost:3000/payment', async (req, res) => {
+app.post('/payment', async (req, res) => {
   const { cartItem } = req.body;
 
   try {
