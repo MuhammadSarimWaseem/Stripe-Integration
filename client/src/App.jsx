@@ -29,7 +29,7 @@ function App() {
 
   const buyFunction = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/payment', { cartItem });
+      const response = await axios.post('https://stripe-integration-zeta.vercel.app/payment', { cartItem });
       if (response.status === 200) {
         window.location.href = response.data.url;
       }
